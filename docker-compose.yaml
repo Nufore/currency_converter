@@ -1,0 +1,11 @@
+version: '3.2'
+services:
+  app:
+    container_name: currency_converter_api
+    build:
+      context: app
+    stop_signal: SIGKILL
+    expose:
+      - "8000"
+    ports:
+      - '8000:8000'
