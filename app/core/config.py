@@ -10,7 +10,7 @@ class Settings(BaseSettings):
 
     default_currency_code_to: str = "RUB"
 
-    default_value: int = 1
+    default_value: float = 1.0
 
 
 settings = Settings()
