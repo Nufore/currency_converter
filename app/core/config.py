@@ -12,5 +12,9 @@ class Settings(BaseSettings):
 
     default_value: float = 1.0
 
+    html_tag: str = "input"
+    html_attr: str = "id"
+    html_attr_name: str = "answer"
+
 
 settings = Settings()

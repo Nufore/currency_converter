@@ -20,11 +20,12 @@ def get_currency_data(from_cur: str, to_cur: str) -> str | float:
     if not r.status_code == 200:
         return "status code is not 200"
 
-    search_input = BeautifulSoup(r.text, 'lxml').find("input", {"id": "answer"})
+    soup = BeautifulSoup(r.text, 'lxml')
+    search_input = soup.find(settings.html_tag, {settings.html_attr: settings.html_attr_name})
 
     if not search_input:
         return "wrong currency code"
 
-    cur_value = search_input.attrs['value']
+    cur_value = float(search_input.attrs['value'])
 
     return cur_value
